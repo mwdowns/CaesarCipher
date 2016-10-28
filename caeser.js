@@ -45,9 +45,12 @@ function mapChar2(char, cipher) {
 
 //This is the offset function so that the cipher can be set by the user.
 function offset(number) {
-  var cipher = alphabet.slice(0, number).concat(alphabet.slice(number, 26));
+  // var part1 = alphabet.slice(0, number);
+  // var part2 = alphabet.slice(number, 26);
+  var cipher = alphabet.slice(number, 26).concat(alphabet.slice(0, number));
   return cipher;
 }
 
-console.log(encrypted('hello', 5));
-console.log(deEncrypted('czggj', 5));
+var theCode =  encrypted('hello', 5);
+console.log(theCode);
+console.log('this is the code decrypted: ' + deEncrypted(theCode, 5));
